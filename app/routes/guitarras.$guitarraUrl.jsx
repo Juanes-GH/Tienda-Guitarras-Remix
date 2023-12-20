@@ -1,5 +1,5 @@
 import { useLoaderData, useRouteError } from '@remix-run/react'
-import {getGuitarra} from '../models/guitarras.server'
+import { getGuitarra } from '../models/guitarras.server'
 import styles from '../styles/guitarras.css'
 
 
