@@ -54,10 +54,10 @@ function post() {
             <h3>{titulo}</h3>
             <p className='fecha'>{formatearFecha(publishedAt)}</p>
             <p className='texto'>{contenido}</p>
+                <Link className='enlace' to={'/posts'}>
+                Volver al Blog
+                </Link>
         </div>
-        <Link className='enlace' to={'/posts'}>
-            Volver al Blog
-        </Link>
     </div>
   )
 }

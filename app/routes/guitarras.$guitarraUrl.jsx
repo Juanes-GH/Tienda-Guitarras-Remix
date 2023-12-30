@@ -47,11 +47,26 @@ function Guitarra() {
         <h3>{nombre}</h3>
         <p className='texto'>{descripcion}</p>
         <p className='precio'>${precio}</p>
+
+        <form className='formulario'>
+          <label htmlFor='cantidad'>Cantidad</label>
+
+          <select id='cantidad'>
+            <option value="">-- Sleccione --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <input type='submit' value='Agregar al carrito'/>
+        </form>
+        <Link className="enlace" to={"/guitarras"}>
+          Volver a todas las gitarras
+        </Link>
       </div>
 
-      <Link className="enlace" to={"/guitarras"}>
-        Volver a todas las gitarras
-      </Link>
     </div>
   )
 }
