@@ -18,8 +18,8 @@ function Navigation() {
             className={location.pathname === '/guitarras'? 'active':''}
         > Tienda</Link>
         <Link 
-            to="/blog"
-            className={location.pathname === '/blog'? 'active':''}
+            to="/posts"
+            className={location.pathname === '/posts'? 'active':''}
         > Blog</Link>
   </nav>
 

@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react'
+import { Link, useLoaderData } from '@remix-run/react'
 import { getPost } from '../models/posts.server'
 import { formatearFecha } from '../utils/helpers'
 import styles from "../styles/blog.css"
@@ -47,7 +47,7 @@ function post() {
     const { contenido, imagen, titulo, publishedAt } = post?.data[0].attributes
 
   return (
-    <main className='contenedor post'>
+    <div className='contenedor post'>
         <img className='imagen' src={imagen?.data?.attributes?.formats.medium.url} alt={`Imagen del post ${titulo}`} />
 
         <div className='contenido'>
@@ -55,7 +55,10 @@ function post() {
             <p className='fecha'>{formatearFecha(publishedAt)}</p>
             <p className='texto'>{contenido}</p>
         </div>
-    </main>
+        <Link className='enlace' to={'/posts'}>
+            Volver al Blog
+        </Link>
+    </div>
   )
 }
 
