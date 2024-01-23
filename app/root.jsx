@@ -82,13 +82,19 @@ export default function App (){
         setCarrito(carritoActualizado)
     }
 
+    const eliminarGuitarra = id => {
+        const carritoActulizado = carrito.filter(guitarraState => guitarraState.id !== id)
+        setCarrito(carritoActulizado)
+    }
+
     return (
         <Document>
             <Outlet 
                 context={{
                     agregarCarrito,
                     carrito,
-                    actualizarCantidad
+                    actualizarCantidad,
+                    eliminarGuitarra
                 }}
             />
         </Document>
