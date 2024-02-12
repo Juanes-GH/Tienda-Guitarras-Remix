@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Meta,
     Links,
     Outlet,
@@ -51,8 +51,14 @@ export function links(){
 
 export default function App (){
 
-    const [carrito, setCarrito] = useState([]) 
+    const carritoLS = typeof window !== 'undefined'? JSON.parse(localStorage.getItem('carrito')) ?? []: []
+    const [carrito, setCarrito] = useState(carritoLS) 
 
+    useEffect(() => {
+        // if (typeof window !== 'undefined') {
+          localStorage.setItem('carrito', JSON.stringify(carrito))
+        // }
+      }, [carrito])
 
     const agregarCarrito = guitarra => {
         if(carrito.some(guitarraState => guitarraState.id === guitarra.id)){
